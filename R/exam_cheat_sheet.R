@@ -1,5 +1,6 @@
+#' @export
 exam_cheat_sheet <- function(week) {
-  week_1 <- quote({
+  week_1 <- quote('
     #R1
     #WRITE YOUR CODE INTO THIS CELL (~1 line of code below this comment)
     getwd()
@@ -82,7 +83,7 @@ exam_cheat_sheet <- function(week) {
     corrected_fruits <- gsub(".", "a", fruits, fixed = TRUE) # This is an alternative solution
 
     #R15
-    #WRITE YOUR CODE INTO THIS CELL (~1-2 lines of code; don't edit first line)
+    #WRITE YOUR CODE INTO THIS CELL (~1-2 lines of code; dont edit first line)
     horrible_numbers <- factor(c("25", pi, "NA", 1))
     mean(as.numeric(as.character(horrible_numbers)), na.rm = T)
 
@@ -187,7 +188,7 @@ exam_cheat_sheet <- function(week) {
 
     grades <- data.frame(1:students,matrix(sample(8:20,students*2,TRUE)/2,,2))
 
-    names(grades) <- c('student_ID','assignment_average','exam')
+    names(grades) <- c("student_ID","assignment_average","exam")
 
     grades$final_grade = 0.4* grades$assignment_average + 0.6 * grades$exam
 
@@ -260,15 +261,15 @@ exam_cheat_sheet <- function(week) {
     #Radv7
     #WRITE YOUR COMMENT INTO THIS CELL
     #https://stackoverflow.com/questions/79227703/how-to-color-only-a-piece-of-a-bar-in-a-bar-plot
-    #interesting because I am interested in R's plotting capabilities
+    #interesting because I am interested in Rs plotting capabilities
 
     #Radv8
     #WRITE YOUR CODE INTO THIS CELL
     df = read.csv("https://raw.githubusercontent.com/hannesrosenbusch/schiphol_class/master/Kaggle_Dataset_Mental_Disorders.csv")
     plot(df$Sadness)
-  })
+  ')
 
-  week_2 <- quote({
+  week_2 <- quote('
     #R1
     hist(sample(8:20, 40, replace = T) * 0.5)
 
@@ -303,9 +304,9 @@ exam_cheat_sheet <- function(week) {
     library(dplyr, warn.conflicts = FALSE)
     data.frame(ChickWeight) %>%
       group_by(Chick) %>%
-      filter(Chick %in% c('1', '20', '5', '40', '19')) %>%
+      filter(Chick %in% c("1". "20", "5", "40", "19")) %>%
       summarise(max_weight = max(weight)) %>%
-      mutate(chick = factor(Chick, levels=c('1', '20', '5', '40', '19'))) %>%
+      mutate(chick = factor(Chick, levels=c("1". "20", "5", "40", "19"))) %>%
       ggplot() +
       geom_bar(aes(chick, max_weight), stat = "identity")
 
@@ -323,16 +324,16 @@ exam_cheat_sheet <- function(week) {
     library(patchwork)
     par(mfrow = c(2,2))
     plot1 <- data.frame(ChickWeight) %>%
-      filter(Chick %in% c('1', '20', '5', '40', '19')) %>%
+      filter(Chick %in% c("1". "20", "5", "40", "19")) %>%
       group_by(Chick) %>%
       summarise(max_weight = max(weight)) %>%
-      mutate(chick = factor(Chick, levels=c('1', '20', '5', '40', '19'))) %>%
+      mutate(chick = factor(Chick, levels=c("1". "20", "5", "40", "19"))) %>%
       ggplot() +
       geom_bar(aes(chick, max_weight), stat = "identity")
 
     plot2 <- data.frame(ChickWeight) %>%
-      filter(Chick %in% c('1', '20', '5', '40', '19')) %>%
-      mutate(chick = factor(Chick, levels=c('1', '20', '5', '40', '19'))) %>%
+      filter(Chick %in% c("1". "20", "5", "40", "19")) %>%
+      mutate(chick = factor(Chick, levels=c("1". "20", "5", "40", "19"))) %>%
       ggplot() +
       geom_line(aes(Time, weight, color = chick)) +
       labs(color = "chick")
@@ -370,7 +371,7 @@ exam_cheat_sheet <- function(week) {
 
     #R12
     library(quantmod)
-    getSymbols("AAPL", from = '2024-01-01',
+    getSymbols("AAPL", from = "2024-01-01",
                to = "2024-10-31",warnings = FALSE,
                auto.assign = TRUE)
 
@@ -381,8 +382,8 @@ exam_cheat_sheet <- function(week) {
     library(tidyquant)
     plotstock <- function(stocksym="AAPL", year = "2023", filename = "mystock.png"){
 
-      my_data <- getSymbols(stocksym, from = paste0(year,'-01-01'),
-                            to = paste0(year,'-12-31'),warnings = FALSE,
+      my_data <- getSymbols(stocksym, from = paste0(year,"-01-01"),
+                            to = paste0(year,"-12-31"),warnings = FALSE,
                             auto.assign = FALSE)
       png(filename)
       print(plot(my_data[,1]))
@@ -426,9 +427,9 @@ exam_cheat_sheet <- function(week) {
     # i like animals
     cowsay::say("moo", "cow")
 
-  })
+  ')
 
-  week_3 <- quote({
+  week_3 <- quote('
     #R1
     meryls_oscars = 3
     meryls_losses = 18
@@ -465,10 +466,10 @@ exam_cheat_sheet <- function(week) {
     }
 
     #R4
-    # the problem was that the code didn't account for conditions within conditions.
+    # the problem was that the code didnt account for conditions within conditions.
     # E.g., if the employee fails to predict sun, then the salary should decrease
     # as well as the notice should be printed to move the party outside.
-    # I've adjusted the code to reflect all possibilities.
+    # Ive adjusted the code to reflect all possibilities.
 
     predicted <- "sun"
     actual <- "sun"
@@ -625,7 +626,7 @@ exam_cheat_sheet <- function(week) {
       rabbits[time] <- verhulst(rabbits[time-1], rate, capacity)
     }
 
-    plot(rabbits, type='l', xlab='time', bty='n')
+    plot(rabbits, type="l, xlab="time", bty="n")
 
     #R15
     vec <- c(4, 50, 3)
@@ -668,7 +669,7 @@ exam_cheat_sheet <- function(week) {
     # function, and so it will return a NULL expression
 
     # B: Both carp and perch will evaluate to "sell". Perch because it is paired
-    # with "sell", and carp because it's element is missing and so the switch()
+    # with "sell", and carp because its element is missing and so the switch()
     # function will evaluate the next non-missing element, which is perch.
 
     #R18
@@ -676,7 +677,7 @@ exam_cheat_sheet <- function(week) {
       print("Great Scott! Erased from existence!")
       rm(list = my_list, pos = 1)
     }
-    mcfly('mcfly')
+    mcfly("mcfly")
 
     # rm() will remove whatever object is inputted as my_list. the pos argument
     # indicates from which environment the object is to be removed.
@@ -741,15 +742,15 @@ exam_cheat_sheet <- function(week) {
     # A: function colorit makes grass_me the colour of grass (which is green),
     # color_me and grass blue, creates vector colorful_items with color_me and
     # grass_me, and returns this vector, effectively always returning the vector
-    # '"blue" "green"'. No input is needed, other than the grass object (which is
+    # "blue" "green". No input is needed, other than the grass object (which is
     # not specified in the function arguments).
 
     # B: grass will still be green, because the blue assignment happens in the
     # local environment of the function. Thus, the original object grass retains
-    # it's value "green".
+    # its value "green".
 
     #R24
-    # A: no, because the object "grass" can't be found which is necessary for
+    # A: no, because the object "grass" cant be found which is necessary for
     # colorit() to function.
 
     # my fixed function inside the new .R file
@@ -765,7 +766,7 @@ exam_cheat_sheet <- function(week) {
       cal <- numeric()
       cal <- x/7
       if(cal == round(cal)) {
-        print("You've found a random number divisible by 7! Number found:"); print(x)
+        print("Youve found a random number divisible by 7! Number found:"); print(x)
       } else {
         return(fun25(sample.int(1e3, 1)))
       }
@@ -773,7 +774,7 @@ exam_cheat_sheet <- function(week) {
 
     # this number finds any number between 1:1e3 which is divisible by 7. If the
     # original input is not divisible by 7, the function will evaluate random
-    # numbers until it's found a number that does.
+    # numbers until its found a number that does.
 
     #Radv1
     library(dplyr)
@@ -798,11 +799,141 @@ exam_cheat_sheet <- function(week) {
       counts <- c(counts, infinite_monkey())
     }
     hist(counts)
-  })
+  ')
+
+  week_4 <- quote('
+    # Loading the data (R1)
+    data1a <- read.csv("https://raw.githubusercontent.com/hannesrosenbusch/PIPS_DATA/refs/heads/master/A.csv")
+    data1b <- read.csv("https://raw.githubusercontent.com/hannesrosenbusch/PIPS_DATA/refs/heads/master/B.csv")
+
+    library(dplyr)
+    library(ggplot2)
+
+    data1a <- data1a %>%
+      filter(rowSums(is.na(.)) < 15)
+
+    data1b_sum <- data1b %>%
+      group_by(stimulus) %>%
+      summarise(
+        mean_funniness = mean(funniness_rating)
+      )
+
+    ggplot(data1b_sum, aes(x = reorder(stimulus, mean_funniness), y = mean_funniness)) +
+      geom_point()
+
+    # Combining the data (R2)
+
+    # compute mean age from df1
+    mean_age <- data1a %>%
+      summarise(mean_age = mean(age))
+
+    # join dataframes
+    data1ab <- data1a %>%
+      full_join(data1b)
+
+    # impute mean age where age is missing
+    data1ab <- data1ab %>%
+      mutate(age = ifelse(is.na(age), mean_age, age))
+
+    # filter participants who scored all stimuli the same
+    data1ab <- data1ab %>%
+      group_by(userid) %>%
+      filter(n_distinct(funniness_rating) > 1) %>%
+      ungroup()
+
+    # create colum for imputed age category yes/no
+    data1ab <- data1ab %>%
+      mutate(imputed_age = ifelse(age == mean_age[[1]], "Yes", "No"))
+    data1ab$imputed_age <- factor(data1ab$imputed_age, levels = c("Yes", "No"))
+
+    # create plot to compare age and funniness_rating, taking into account imputed age
+    sum <- data1ab %>%
+      group_by(age) %>%
+      summarise(
+        count = n(),
+        mean_fun = mean(funniness_rating)
+      )
+    sum$age <- as.numeric(sum$age)
+
+    ggplot(sum, aes(x = age, y = mean_fun, colour = count)) +
+      geom_point() +
+      labs(
+        x = "Age",
+        y = "Mean funniness rating",
+        title = "Age vs mean funniness rating\n(red dot = imputed mean age)"
+      ) +
+      scale_color_gradient(
+        low = "darkblue",
+        high = "red",
+        name = "Count scale"
+      ) +
+      theme_minimal()
+
+    # Professional dataframe manipulation (R3)
+    library(stringr)
+    df3 <- data1ab %>%
+      group_by(userid) %>%
+      slice_head() %>%
+      ungroup() %>%
+      select(starts_with("mood_")) %>%
+      rename_with(~ str_remove(., "^mood_"))
+
+    df3 <- as.matrix(df3)
+    df3.cor <- cor(df3)
+
+    library(corrplot)
+    corrplot(df3.cor, order = "AOE",tl.pos = "n")
+
+    # Long format and functions (R4)
+    install.packages("randomNames")
+    library(randomNames)
+
+    df3 <- bind_cols(
+      ID = "",
+      df3
+    )
+
+    set.seed(1)
+    for(i in 1:length(df3$ID)) {
+      df3$ID[i] <- randomNames(1)
+    }
+
+    library(tidyr)
+    df4 <- df3 %>%
+      pivot_longer(
+        cols = !ID,
+        names_to = "Mood dimension",
+        values_to = "score")
+
+    mood_percentile <- function(ID, dataframe) {
+      if(length(which(dataframe$ID == ID)) == 0) {
+        stop("Name is not found in data frame.")
+      } else {
+        vec <- which(dataframe$ID == ID)
+        dimension <- dataframe$`Mood dimension`[1:10]
+        res <- data.frame("Mood dimension" = dimension, Percentiles = NA)
+        df_perc <- data.frame(`Mood dimension` = NA)
+        perc_list <- list()
+        for(name in dimension) {
+          temp_list = perc_list = list()
+          vec3 <- dataframe$score[which(dataframe$`Mood dimension` == as.character(name))]
+          fn2 <- ecdf(vec3)
+          percentiles2 <- fn2(vec3)
+          temp_list <- list(name = percentiles2)
+          perc_list <- append(perc_list, temp_list)
+          res$Percentiles[which(res$"Mood.dimension" == as.character(name))] <- perc_list$name[(vec[which(dimension == as.character(name))]-1)/10+1]
+        }
+        print(res)
+        print("Which dimension has the highest percentile?")
+        paste(res[which(res$Percentiles == max(res$Percentiles)),])
+      }
+    }
+  ')
 
   switch (week,
-          week1 = print(week_1),
-          week2 = print(week_2),
-          week3 = print(week_3)
+          week1 = cat(week_1),
+          week2 = cat(week_2),
+          week3 = cat(week_3),
+          week4 = cat(week_4)
   )
 }

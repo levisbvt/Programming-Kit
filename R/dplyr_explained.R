@@ -1,3 +1,4 @@
+#' @export
 dplyr_explained <- function() {
   code <- '
     # Overview of dplyr functions with examples

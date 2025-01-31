@@ -1,3 +1,4 @@
+#' @export
 tidyr_explained <- function() {
   code <- '
     # Overview of tidyr functions

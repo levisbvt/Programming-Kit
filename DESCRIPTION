@@ -1,16 +1,17 @@
 Package: progkit
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Levi's Programming Toolkit
 Version: 0.1.0
 Authors@R: c(
     person(
-      "Jane", "Doe",
-      email = "jane@example.com",
+      "Levi", "van Tricht",
+      email = "levi.vantricht@gmail.com",
       role = c("aut", "cre")
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
+Description: This package was created as support during a programming exam. 
+    It has answers to assignments, as well as some information on dplyr and tidyr.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.3.2
